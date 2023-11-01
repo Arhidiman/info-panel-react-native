@@ -1,0 +1,106 @@
+.route-item {
+    display: flex;
+    align-items: center;
+    height: 153px;
+    @media screen and (min-width: 2782px) {
+        height: 208px;
+    }
+    &.in-move {
+        height: 123px;
+        @media screen and (min-width: 2782px) {
+            height: 171px;
+        }
+    }
+    &__route-line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2px;   
+        height: 100%;
+        &_circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 10000px;
+            background: var(--blue);
+        }
+        &_top {
+            height: 40%;
+            border-left: solid var(--light-grey) 2px;
+        }
+        &_bottom {
+            height: 40%;
+            border-left: solid var(--light-grey) 2px;
+            &.line-fade {
+                border-left: solid 2px;
+                border-image-source: linear-gradient(var(--light-grey), transparent);
+                border-image-slice: 1;
+            }
+            &.last-stop {
+                border: none
+            }
+        }
+    }
+    &__time-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80px;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--dark-grey);
+        &::after {
+            content: "мин";
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    &__stop {
+        &-name {
+            margin-left: 25px;
+            width: 70%;
+            padding: 10px 16px;
+            &.selected {
+                background: var(--blue);;
+            }
+        }
+        &_ru {
+            margin-bottom: 4px;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: 0em;
+            text-align: left;
+            @media screen and (min-width: 2782px) {
+                margin-bottom: 10px;
+                font-size: 40px;
+            }
+        }
+        &_eng {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;     
+            @media screen and (min-width: 2782px) {
+                font-size: 32px;
+            }       
+        }
+    }
+    &.end-stop {
+        margin-left: 32px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--black-green);
+        @media screen and (min-width: 2781.98px) {
+          font-size: 32px;
+        }
+      }
+}
