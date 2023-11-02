@@ -4,6 +4,7 @@ import useWebSocket from "react-use-websocket";
 import { setRouteStates } from "@/lib/setRouteStates";
 import AppLeft from '@/components/app-left/AppLeft';
 import { wsUrl } from '@/constants/urls'
+import RouteItem from "@/components/route-stops/route-item/RouteItem";
 
 
 interface IWebSocket {
@@ -156,6 +157,7 @@ export default function App() {
                 {"APP"}
             </Text>
             {/* <TestComponent/> */}
+       
         </View>
     </AppContext.Provider>
   );

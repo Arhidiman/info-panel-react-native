@@ -1,5 +1,6 @@
 import { View, StyleSheet } from "react-native"
 import { CSSTransition, SwitchTransition } from "react-transition-group"
+import RouteStops from "@/components/route-stops/RouteStops"
 import useAppContext from "@/hooks/useAppContext"
 // import RouteStops from "@/components/route-stops/RouteStops"
 // import TransfersInfo from "@/components/transfers-info/TransfersInfo"
@@ -27,6 +28,7 @@ function AppLeftContent() {
                     :
                     <RouteStops/>
                   } */}
+                  <RouteStops/>
               </CSSTransition>
           </SwitchTransition>
           {/* <InfoPlate/>         */}

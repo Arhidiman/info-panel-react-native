@@ -2,12 +2,12 @@
     display: flex;
     align-items: center;
     height: 153px;
-    @media screen and (min-width: 2782px) {
+    @media screen and (min-width: 2781.98px) {
         height: 208px;
     }
     &.in-move {
         height: 123px;
-        @media screen and (min-width: 2782px) {
+        @media screen and (min-width: 2781.98px) {
             height: 171px;
         }
     }

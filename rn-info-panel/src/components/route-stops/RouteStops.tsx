@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { View, Text, StyleSheet } from "react-native"
 import useAppContext from "@/hooks/useAppContext"
 import RouteItem from "./route-item/RouteItem"
 import { TStop } from "@/types/types"
@@ -22,7 +23,6 @@ function RouteStops() {
                 return <RouteItem 
                     key={stop.nameRus}
                     topDisplayed={count === 1}
-                    className={count === displayedStops ? 'line-fade' : ""}
                     inMove={inMove}
                     isLast={i === stops.length - 1}
                     nameRus={stop.nameRus} 
@@ -35,13 +35,19 @@ function RouteStops() {
             console.log(error, count, nextStop, stop, displayedStops)
         }
     }
+
+    const routeStops = StyleSheet.create({
+        endStop: {
+
+        }
+    })
     
     return (
-        <div className="route-stops">
-                {
-                    stops.length > 0 ?  stops.map(stop) : <div className="route-item end-stop" >Конечная</div>
-                }
-        </div>
+        <View>
+            {
+                stops.length > 0 ?  stops.map(stop) : <Text className="route-item end-stop" >Конечная</Text>
+            }
+        </View>
     )
 }
 
