@@ -19,12 +19,13 @@ const getRouteItemHeight = (deviceWidth: number, inMove: boolean ) => {
 export const routeItemStyle = StyleSheet.create({
     container: {
         display: "flex",
+        flexDirection: "row",
         alignItems: "center",
     }, 
-    middleInMove: {
+    defaultInMove: {
         height: 123
     },
-    middleStop: {
+    defaultStop: {
         height: 153
     },
     largeInMove: {
@@ -52,12 +53,12 @@ export const routeTmeLeftStyle = StyleSheet.create({
     },
     timeLeftUnit: {
         fontWeight: "500",
-        fonSize: 24,
+        fontSize: 24,
         linHeight: 32
     },
 })
 
-export const routeLineStyle = (isLast: boolean) => StyleSheet.create({
+export const routeLineStyle = StyleSheet.create({
     routeLineContainer: {
         display: "flex",
         flexDirection: "column",
@@ -77,11 +78,15 @@ export const routeLineStyle = (isLast: boolean) => StyleSheet.create({
         borderRadius: 10000,
         background: appColors.blue
     },
-    routeLineBottom: {
+    routeLineBottom: {  //нижняя часть линии маршрута, под кругом 
         height: "40%",
-        borderLeft: isLast ? "none" : `solid ${appColors.lightGrey} 2`
+        borderLeft: `solid ${appColors.lightGrey} 2`
     },
-    routeLineBottomLast: {
+    routeLineBottomFade: {  //нижняя часть линии маршрута, под кругом нижней отображаемой остановки, с градиентов в прозрачный цвет
+        borderImageSource: `linear-gradient${appColors.lightGrey}, transparent)`,
+        backgroundColor: "auto",
+    },
+    routeLineBottomLast: {  //убираем границу на последней точке маршрута
         borderLeft: "none",
         backgroundColor: "auto",
         // backgroundColor: "black",
@@ -89,38 +94,99 @@ export const routeLineStyle = (isLast: boolean) => StyleSheet.create({
     }
 })
 
-export const routeStopNameStyle = (inMove: boolean, topDisplayed: boolean, width: number) => StyleSheet.create({
+export const routeStopNameStyle = StyleSheet.create({
     stopNameContainer: {
         marginLeft: 25,
-        width: 70,
+        width: "70%",
         paddingTop: 10,
         paddinRight: 16,
         paddingBottom: 10,
         paddingLeft: 16,
-        backgroundColor: inMove && topDisplayed ? appColors.blue : "none"
+    },
+
+    stopNameContainerSelected: {
+        backgroundColor: appColors.blue
+    },
+
+    stopNameContainerNotSelected: {
+        backgroundColor: "none"
     },
     stopNameRus: {
-        marginBottom: width < minLargePanelWidth ? 4 : 10 ,
-        fontSize: width < minLargePanelWidth ? 32 : 40 ,
         fontWeight: "700",
         lineHeight: 32,
         letterSpacing: 0,
         textAlign: "left"
     },
-    stopNameRusMiddle: {
+    stopNameRusDefault: {
         marginBottom: 4,
         fontSize: 32,
     },
     stopNameRusLarge: {
         marginBottom: 10,
         fontSize: 40,
-    },
-   
+    },   
     stopNameEng: {
-        fontSize: width < minLargePanelWidth ? 24 : 32,
         fontWeight: "700",
         lineHeight: 24,
         letterSpacing: 0,
         textAlign: "left"  
+    },
+    stopNameEngDefault: {
+        fontSize: 24
+    },
+    stopNameEngLarge: {
+        fontSize: 32
     }
 })
+
+
+export const routeEndStop = StyleSheet.create({
+    text: {
+        marginLeft: 32,
+        fontSize: 32,
+        fontWeight: "500",
+        lineHeight: 24,
+        letterSpacing: 0,
+        textAlign: "left",
+        color: appColors.blackGreen
+    }
+})
+
+
+
+
+// export const routeStopNameStyle = (inMove: boolean, topDisplayed: boolean, width: number) => StyleSheet.create({
+//     stopNameContainer: {
+//         marginLeft: 25,
+//         width: 70,
+//         paddingTop: 10,
+//         paddinRight: 16,
+//         paddingBottom: 10,
+//         paddingLeft: 16,
+//         backgroundColor: inMove && topDisplayed ? appColors.blue : "none"
+//     },
+//     stopNameRus: {
+//         marginBottom: width < minLargePanelWidth ? 4 : 10 ,
+//         fontSize: width < minLargePanelWidth ? 32 : 40 ,
+//         fontWeight: "700",
+//         lineHeight: 32,
+//         letterSpacing: 0,
+//         textAlign: "left"
+//     },
+//     stopNameRusMiddle: {
+//         marginBottom: 4,
+//         fontSize: 32,
+//     },
+//     stopNameRusLarge: {
+//         marginBottom: 10,
+//         fontSize: 40,
+//     },
+   
+//     stopNameEng: {
+//         fontSize: width < minLargePanelWidth ? 24 : 32,
+//         fontWeight: "700",
+//         lineHeight: 24,
+//         letterSpacing: 0,
+//         textAlign: "left"  
+//     }
+// })

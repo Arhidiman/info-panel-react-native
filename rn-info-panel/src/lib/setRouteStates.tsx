@@ -26,9 +26,11 @@ export const setRouteStates = (
     setTickerText: Dispatch<SetStateAction<string>>,
     setStreamUrl: Dispatch<SetStateAction<string>>,
     ) => {
-   
+        console.log(message)
+
     if(message) {
         const type = JSON.parse(message.data).type
+        console.log(message)
         switch(type) {
             case "ROUTE": {
                 const stops = JSON.parse(message.data).stops

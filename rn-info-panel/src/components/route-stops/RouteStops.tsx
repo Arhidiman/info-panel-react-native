@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, useWindowDimensions } from "react-native"
 import useAppContext from "@/hooks/useAppContext"
 import RouteItem from "./route-item/RouteItem"
 import { TStop } from "@/types/types"
-import "./RouteStops.scss"
+import { minLargePanelWidth } from "@/constants/dimensions"
+import { routeEndStop } from "./RouteStopsStyle"
 
 function RouteStops() {
 
@@ -12,9 +13,12 @@ function RouteStops() {
     let count = 0
     const [displayedStops, setDisplayedStops] = useState(4)
 
+
+
     useEffect(() => {
         inMove ? setDisplayedStops(4) : setDisplayedStops(3) 
     }, [inMove])
+
 
     const stop = (stop: TStop, i: number) => {
         try {
@@ -23,6 +27,7 @@ function RouteStops() {
                 return <RouteItem 
                     key={stop.nameRus}
                     topDisplayed={count === 1}
+                    bottomDisplayed={count === displayedStops}
                     inMove={inMove}
                     isLast={i === stops.length - 1}
                     nameRus={stop.nameRus} 
@@ -36,17 +41,20 @@ function RouteStops() {
         }
     }
 
-    const routeStops = StyleSheet.create({
-        endStop: {
+    // const routeStops = StyleSheet.create({
+    //     endStop: {
 
-        }
-    })
+    //     }
+    // })
     
     return (
         <View>
             {
-                stops.length > 0 ?  stops.map(stop) : <Text className="route-item end-stop" >Конечная</Text>
+                stops.length > 0 ?  stops.map(stop) : <Text style={routeEndStop.text} >Конечная</Text>
             }
+            {/* <RouteItem topDisplayed={false} bottomDisplayed={false} inMove={false} isLast={false} nameRus="Пулково" nameEng="Pulkovo" timeLeft={5} circleColor="#fff"/> */}
+            {/* <RouteItem topDisplayed={false} bottomDisplayed={false} inMove={false} isLast={false} nameRus="Пулково" nameEng="Pulkovo" timeLeft={5} circleColor="#fff"/>
+            <RouteItem topDisplayed={false} bottomDisplayed={false} inMove={false} isLast={false} nameRus="Пулково" nameEng="Pulkovo" timeLeft={5} circleColor="#fff"/> */}
         </View>
     )
 }

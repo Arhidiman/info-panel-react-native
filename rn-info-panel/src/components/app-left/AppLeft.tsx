@@ -1,12 +1,15 @@
 import { View, StyleSheet, Dimensions } from 'react-native';
-import AppLeftHeader from "./app-left-header/AppLeftHeader"
-import ApppLeftContent from "./app-left-content/AppLeftContent"
+import AppLeftHeader from '@/components/app-left-header/AppLeftHeader';
+import AppLeftContent from "./app-left-content/AppLeftContent"
+import RouteStops from '../route-stops/RouteStops';
 
 function AppLeft() {
     return (
         <View style={appLeftStyle.container}>
             {/* <AppLeftHeader/>
             <ApppLeftContent/> */}
+            <AppLeftContent/>
+           
         </View>
     )
 }
@@ -19,7 +22,6 @@ const appLeftStyle = StyleSheet.create({
         position: "relative",
         width: deviceWidth > 2781.98 ? 1391 : 960,
         height: deviceWidth > 2781.98 ? 768 : 540,
-        backgroundColor: "lightblue"
     }
 })
 

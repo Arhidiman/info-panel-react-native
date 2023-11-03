@@ -2,6 +2,7 @@ import { View, StyleSheet } from "react-native"
 import { CSSTransition, SwitchTransition } from "react-transition-group"
 import RouteStops from "@/components/route-stops/RouteStops"
 import useAppContext from "@/hooks/useAppContext"
+import RouteItem from "@/components/route-stops/route-item/RouteItem"
 // import RouteStops from "@/components/route-stops/RouteStops"
 // import TransfersInfo from "@/components/transfers-info/TransfersInfo"
 // import InfoPlate from "@/components/info-plate/InfoPlate"
@@ -11,11 +12,7 @@ function AppLeftContent() {
     const { transfers, inMove } = useAppContext()
 
 
-    const appLeftContentStyle = StyleSheet.create({
-      container: {
-
-      }
-    })
+  
 
     return (
       <View>
@@ -29,6 +26,7 @@ function AppLeftContent() {
                     <RouteStops/>
                   } */}
                   <RouteStops/>
+                 
               </CSSTransition>
           </SwitchTransition>
           {/* <InfoPlate/>         */}

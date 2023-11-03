@@ -16,6 +16,8 @@ export const AppContext = createContext(null)
 
 export default function App() {
 
+  // console.log(wsUrl)
+
   const { lastMessage }: IWebSocket = useWebSocket(wsUrl)
 
   const [type, setType] = useState("")
@@ -47,6 +49,10 @@ export default function App() {
   const [ labelToSend, setLabelToSend ] = useState("")
   const [ tickerText, setTickerText ] = useState("")
   const [ streamUrl, setStreamUrl ] = useState("")
+
+
+
+  // console.log(lastMessage)
 
   // alert(JSON.parse(lastMessage.data))
 
@@ -157,6 +163,7 @@ export default function App() {
                 {"APP"}
             </Text>
             {/* <TestComponent/> */}
+      
        
         </View>
     </AppContext.Provider>
