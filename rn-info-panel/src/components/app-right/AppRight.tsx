@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react"
+import { View, StyleSheet, useWindowDimensions } from "react-native"
 import { CSSTransition, SwitchTransition } from "react-transition-group"
 import RightScreens from "@/components/right-screens/RightScreens"
+import { minLargePanelWidth } from "@/constants/dimensions"
+import { appRightStyle } from "./AppRightStyle"
+
+
+
 
 function AppRight() {
 
@@ -19,12 +25,16 @@ function AppRight() {
     }, [screenNum])
     // useEffect используется как заглушка, чтобы долго не ждать сообщение от сервера и сразу видеть результат
 
+    const { width: deviceWidth } = useWindowDimensions()
+
+    const { container: appRightContainer } = appRightStyle(deviceWidth, minLargePanelWidth)
+
     return (
         <SwitchTransition>
           <CSSTransition key={screenNum} timeout={700} classNames="fade" mountOnEnter unmountOnExit>
-                <div className="app-page-right">
-                  <RightScreens screenNum={screenNum}/>
-                </div>
+                <View style={appRightContainer}>
+                  <RightScreens screenNum={3}/>
+                </View>
         </CSSTransition>
         </SwitchTransition>
   )

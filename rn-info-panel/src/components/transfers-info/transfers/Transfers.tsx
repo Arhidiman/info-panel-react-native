@@ -7,11 +7,13 @@ interface ITransfers {
     icons: string[]
 }
 
-const { width: deviceWidth } = useWindowDimensions()
 
-const {container: transfersContainer, transfersMainIcon, transferIcon, transfersIcons} = transfersStyle(deviceWidth, minLargePanelWidth)
+
+
 
 function Transfers({ icons }: ITransfers) {
+    const { width: deviceWidth } = useWindowDimensions()
+    const {container: transfersContainer, transfersMainIcon, transferIcon, transfersIcons} = transfersStyle(deviceWidth, minLargePanelWidth)
     return (      
         <View style={transfersContainer}>
             <Image style={transfersMainIcon} source={{uri: icons && srcBaseUrl+icons[0]}} alt="bus image"/>

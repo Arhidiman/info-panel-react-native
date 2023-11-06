@@ -1,0 +1,27 @@
+.info-plate {
+    display: inline-flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 8px;
+    right: 24px;
+    justify-content: space-around;
+    padding: 6px 24px;
+    background: var(--grey);
+    border: solid var(--dark-grey) 1px;
+    border-radius: 2px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    color: var(--violet);
+    &-wrapper {
+        display: inline;
+        float:right
+    }
+    @media screen and (min-width: 2781.98px) {
+        gap: 25px;
+        font-size: 30px;
+        padding: 10px 30px;
+    }
+}

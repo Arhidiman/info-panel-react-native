@@ -69,25 +69,29 @@ export const routeLineStyle = StyleSheet.create({
     },
     routeLineTop: {
         height: "40%",
-        borderLeft: `solid ${appColors.lightGrey} 2`
+        // borderLeft: `solid ${appColors.lightGrey} 2`
+        borderWidth: 2
     },
     routeLineCircle: {
         border: "none",
         width: 20,
         height: 20,
         borderRadius: 10000,
-        background: appColors.blue
+        backgroundColor: appColors.blue
     },
     routeLineBottom: {  //нижняя часть линии маршрута, под кругом 
         height: "40%",
-        borderLeft: `solid ${appColors.lightGrey} 2`
+        // borderLeft: `solid ${appColors.lightGrey} 2`,
+        borderWidth: 2
+
     },
     routeLineBottomFade: {  //нижняя часть линии маршрута, под кругом нижней отображаемой остановки, с градиентов в прозрачный цвет
         borderImageSource: `linear-gradient${appColors.lightGrey}, transparent)`,
         backgroundColor: "auto",
     },
     routeLineBottomLast: {  //убираем границу на последней точке маршрута
-        borderLeft: "none",
+        // borderLeft: "none",
+        border: "none",
         backgroundColor: "auto",
         // backgroundColor: "black",
         // border: "none"

@@ -5,6 +5,7 @@ import { setRouteStates } from "@/lib/setRouteStates";
 import AppLeft from '@/components/app-left/AppLeft';
 import { wsUrl } from '@/constants/urls'
 import RouteItem from "@/components/route-stops/route-item/RouteItem";
+import AppRight from "@/components/app-right/AppRight";
 
 
 interface IWebSocket {
@@ -161,7 +162,8 @@ export default function App() {
                 {"APP"}
             </Text>
             {/* <TestComponent/> */}
-      
+            <AppRight/>
+
        
         </View>
     </AppContext.Provider>
