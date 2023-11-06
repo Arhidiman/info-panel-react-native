@@ -1,14 +1,17 @@
+import { Text } from "react-native"
 import useAppContext from "@/hooks/useAppContext"
+import { minLargePanelWidth } from "@/constants/dimensions"
+import { appLeftHeaderWhenStopStyle } from "../AppLeftHeaderStyle"
 
 function HeaderInMoveContent() {
 
-    const { currentStop } = useAppContext()
+    const { currentStop, deviceWidth } = useAppContext()
 
     return (
         currentStop && 
         <>
-            <div className="app-page__stop-name-ru">{currentStop.nameRus}</div>
-            <div className="app-page__stop-name-eng">{currentStop.nameEng}</div>
+            <Text style={appLeftHeaderWhenStopStyle(deviceWidth, minLargePanelWidth).rus}>{currentStop.nameRus}</Text>
+            <Text style={appLeftHeaderWhenStopStyle(deviceWidth, minLargePanelWidth).eng}>{currentStop.nameEng}</Text>
         </>
      )
 }

@@ -6,6 +6,7 @@ import HeaderInMoveContent from "./header-in-move-content/HeaderInMoveContent"
 import { minLargePanelWidth } from "@/constants/dimensions"
 import { appLeftHeaderStyle } from "./AppLeftHeaderStyle"
 
+
 function AppLeftHeader() {
 
     const { currentStop, inMove, routeColor, routeFontColor} = useAppContext()
@@ -24,8 +25,9 @@ function AppLeftHeader() {
             <CSSTransition key={inMove ? "in-move" : 'stop'} timeout={1500} classNames="fade" mountOnEnter unmountOnExit>
                 <View style={inMove ? headerStyle : {...headerStyle, ...headerAddStyle}}>
                     {
-                        inMove && currentStop ?  <HeaderInMoveContent/> : <HeaderWhenStoppingContent/>
+                        // inMove && currentStop ?  <HeaderInMoveContent/> : <HeaderWhenStoppingContent/>
                     }
+                    Моя остановочка
                 </View>
             </CSSTransition>
         </SwitchTransition>

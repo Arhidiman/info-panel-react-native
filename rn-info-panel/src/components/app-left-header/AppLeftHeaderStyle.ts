@@ -15,3 +15,38 @@ export const appLeftHeaderStyle = (deviceWidth: number, minLargePanelWidth: numb
         bordeBottom: `solid 2 ${appColors.lightGrey}`,
     }
 })
+
+
+export const appLeftHeaderWhenStopStyle = (deviceWidth: number, minLargePanelWidth: number) => StyleSheet.create({
+    rus: {
+        fontSize: deviceWidth < minLargePanelWidth ? 12 : 20,
+    },
+    eng: {
+        fontSize: deviceWidth < minLargePanelWidth ? 12 : 20,
+    }
+})
+
+export const appLeftHeaderInMoveStyle = (deviceWidth: number, minLargePanelWidth: number) => StyleSheet.create({
+    routeName: {
+        fontSize: deviceWidth < minLargePanelWidth ? 28 : 36
+    }
+})
+
+
+
+// &-ru {
+//     @media screen and (min-width: 1919.98px) {
+//       font-size: 40px;
+//     }
+//     @media screen and (min-width: 2781.98px) {
+//       font-size: 48px;
+//     }
+// }
+// &-eng {
+//     @media screen and (min-width: 1919.98px) {
+//       font-size: 28px;
+//     }
+//     @media screen and (min-width: 2781.98px) {
+//       font-size: 36px;
+//     }
+// }

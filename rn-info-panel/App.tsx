@@ -20,7 +20,7 @@ export default function App() {
 
   const { lastMessage }: IWebSocket = useWebSocket(wsUrl)
 
-  const [type, setType] = useState("")
+  const { width: deviceWidth } = useWindowDimensions()
 
   const [ stops, setStops ] = useState([])
   const [ routeIcon, setRouteIcon ] = useState("")
@@ -52,10 +52,9 @@ export default function App() {
 
 
 
-  // console.log(lastMessage)
+  console.log(lastMessage)
 
   // alert(JSON.parse(lastMessage.data))
-
 
   // console.log(JSON.parse(lastMessage.data))
 
@@ -108,7 +107,6 @@ export default function App() {
       } 
     }, [error, labelToSend])
 
-  const { width, height } = useWindowDimensions()
 
   const styles = StyleSheet.create({
     container: {
@@ -117,16 +115,16 @@ export default function App() {
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      width: width, 
-      height: height
     },
   });
   
   return (
     <AppContext.Provider value={
         {
+
           lastMessage, 
 
+          deviceWidth,
           stops, 
           routeIcon, 
           routeColor, 

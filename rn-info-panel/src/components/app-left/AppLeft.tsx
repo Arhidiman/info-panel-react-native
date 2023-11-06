@@ -6,10 +6,8 @@ import RouteStops from '../route-stops/RouteStops';
 function AppLeft() {
     return (
         <View style={appLeftStyle.container}>
-            {/* <AppLeftHeader/>
-            <ApppLeftContent/> */}
-            <AppLeftContent/>
-           
+            <AppLeftHeader/>
+            <AppLeftContent/>           
         </View>
     )
 }
