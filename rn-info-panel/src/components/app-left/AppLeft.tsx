@@ -1,7 +1,7 @@
 import { View, StyleSheet, Dimensions } from 'react-native';
 import AppLeftHeader from '@/components/app-left-header/AppLeftHeader';
 import AppLeftContent from "./app-left-content/AppLeftContent"
-import RouteStops from '../route-stops/RouteStops';
+
 
 const deviceWidth = Dimensions.get("window").width
 
@@ -21,7 +21,5 @@ function AppLeft() {
         </View>
     )
 }
-
-
 
 export default AppLeft

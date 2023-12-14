@@ -12,7 +12,7 @@ function HeaderWhenStoppingContent() {
     return (
         <View>
             <Image source={{uri: srcBaseUrl+routeIcon}} alt="route icon"/>
-            <Text style={style}>{firstStop + " - " + lastStop}</Text>
+            <Text style={style}> {firstStop} - {lastStop}</Text>
         </View>
     )
 }

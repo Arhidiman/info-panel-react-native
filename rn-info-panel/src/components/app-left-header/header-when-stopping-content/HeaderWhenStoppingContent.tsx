@@ -1,4 +1,4 @@
-import { Text } from "react-native"
+import { Text, View } from "react-native"
 import useAppContext from "@/hooks/useAppContext"
 import { minLargePanelWidth } from "@/constants/dimensions"
 import { appLeftHeaderWhenStopStyle } from "../AppLeftHeaderStyle"

@@ -1,4 +1,4 @@
-import { View, useWindowDimensions } from "react-native"
+import { View, Text, useWindowDimensions } from "react-native"
 import useAppContext from "@/hooks/useAppContext"
 import HeaderWhenStoppingContent from "./header-when-stopping-content/HeaderWhenStoppingContent"
 import HeaderInMoveContent from "./header-in-move-content/HeaderInMoveContent"
@@ -16,12 +16,11 @@ function AppLeftHeader() {
     }
 
     const { width: deviceWidth } = useWindowDimensions()
-
     const headerStyle = appLeftHeaderStyle(deviceWidth, minLargePanelWidth, inMove).container
         
     return (
         <View style={inMove ? headerStyle : {...headerStyle, ...headerAddStyle}}>
-            inMove && currentStop ?  <HeaderInMoveContent/> : <HeaderWhenStoppingContent/>
+            {inMove && currentStop ? <HeaderInMoveContent/> : <HeaderWhenStoppingContent/>}
         </View>
     )
 }

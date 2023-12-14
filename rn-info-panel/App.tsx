@@ -17,7 +17,7 @@ export const AppContext = createContext(null)
 
 export default function App() {
 
-  // console.log(wsUrl)
+  console.log("wsUrl", wsUrl)
 
   const { lastMessage }: IWebSocket = useWebSocket(wsUrl)
 
