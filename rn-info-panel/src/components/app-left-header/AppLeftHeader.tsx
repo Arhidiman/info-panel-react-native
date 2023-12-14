@@ -1,5 +1,4 @@
 import { View, useWindowDimensions } from "react-native"
-import { CSSTransition, SwitchTransition } from "react-transition-group"
 import useAppContext from "@/hooks/useAppContext"
 import HeaderWhenStoppingContent from "./header-when-stopping-content/HeaderWhenStoppingContent"
 import HeaderInMoveContent from "./header-in-move-content/HeaderInMoveContent"
@@ -21,16 +20,9 @@ function AppLeftHeader() {
     const headerStyle = appLeftHeaderStyle(deviceWidth, minLargePanelWidth, inMove).container
         
     return (
-        <SwitchTransition>
-            <CSSTransition key={inMove ? "in-move" : 'stop'} timeout={1500} classNames="fade" mountOnEnter unmountOnExit>
-                <View style={inMove ? headerStyle : {...headerStyle, ...headerAddStyle}}>
-                    {
-                        // inMove && currentStop ?  <HeaderInMoveContent/> : <HeaderWhenStoppingContent/>
-                    }
-                    Моя остановочка
-                </View>
-            </CSSTransition>
-        </SwitchTransition>
+        <View style={inMove ? headerStyle : {...headerStyle, ...headerAddStyle}}>
+            inMove && currentStop ?  <HeaderInMoveContent/> : <HeaderWhenStoppingContent/>
+        </View>
     )
 }
 

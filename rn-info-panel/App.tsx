@@ -112,7 +112,8 @@ export default function App() {
   const styles = StyleSheet.create({
     container: {
       display: 'flex',
-      flex: 1,
+      flexDirection: "row",
+      alignSelf: "flex-start",
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
@@ -123,29 +124,29 @@ export default function App() {
     <AppContext.Provider value={
         {
 
-          lastMessage, 
+          lastMessage,
 
           deviceWidth,
-          stops, 
-          routeIcon, 
-          routeColor, 
+          stops,
+          routeIcon,
+          routeColor,
           routeFontColor,
-          firstStop, 
+          firstStop,
           lastStop,
 
-          nextStop, 
-          transfers, 
-          speed, 
+          nextStop,
+          transfers,
+          speed,
           temperature,
-          stopsTimes, 
-          currentStop, 
-          inMove, 
-          playImage, 
+          stopsTimes,
+          currentStop,
+          inMove,
+          playImage,
           playImageLabel,
           video,
           videoLength,
           videoLabel,
-          airportContent, 
+          airportContent,
           rightScreenNum,
           tickerText,
           streamUrl,
@@ -157,14 +158,7 @@ export default function App() {
     }>
         <View style={styles.container}>
             <AppLeft/>
-            <Text>
-                {/* {lastMessage.data ? JSON.parse(lastMessage.data) : ""} */}
-                {"APP"}
-            </Text>
-            {/* <TestComponent/> */}
-            <AppRight/>
-
-       
+            {/*<AppRight/>*/}
         </View>
     </AppContext.Provider>
   );

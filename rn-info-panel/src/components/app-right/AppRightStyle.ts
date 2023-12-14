@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native/Libraries/StyleSheet/StyleSheet"
+import { StyleSheet } from "react-native"
 import { appColors } from "@/constants/colors";
 
 

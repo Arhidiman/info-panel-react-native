@@ -7,4 +7,4 @@ const developUrl = "192.168.100.204"
 
 
 export const srcBaseUrl =  `http://${pulkovoUrl}:8080` //получение картинок, иконок
-export const wsUrl =  `ws://${moscowUrl}:23245` //веб сокет соединение
+export const wsUrl =  `ws://${pulkovoUrl}:23245` //веб сокет соединение

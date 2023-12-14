@@ -13,8 +13,6 @@ function RouteStops() {
     let count = 0
     const [displayedStops, setDisplayedStops] = useState(4)
 
-
-
     useEffect(() => {
         inMove ? setDisplayedStops(4) : setDisplayedStops(3) 
     }, [inMove])
